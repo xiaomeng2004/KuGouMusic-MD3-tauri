@@ -1,0 +1,3 @@
+[submodule "api"]
+	path = api
+	url = https://github.com/xiaomeng2004/KuGouMusicApi.git
