@@ -1,13 +1,26 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import vueDevTools from 'vite-plugin-vue-devtools'
+import vueDevTools from "vite-plugin-vue-devtools";
+import AutoImport from "unplugin-auto-import/vite";
+import Components from "unplugin-vue-components/vite";
 
-// @ts-expect-error process 是 Node.js 的全局变量
 const host = process.env.TAURI_DEV_HOST;
 
 // Vite 配置文档：https://vite.dev/config/
 export default defineConfig(async () => ({
-  plugins: [vue(), vueDevTools()],
+  plugins: [
+    vue({
+      template: {
+        compilerOptions: {
+          // 所有以 mdui- 开头的标签名都是 mdui 组件
+          isCustomElement: (tag) => tag.startsWith("mdui-"),
+        },
+      },
+    }),
+    vueDevTools(),
+    AutoImport({}),
+    Components({}),
+  ],
 
   // 这些 Vite 选项为 Tauri 开发定制，仅在 `tauri dev` 或 `tauri build` 时应用
   //
