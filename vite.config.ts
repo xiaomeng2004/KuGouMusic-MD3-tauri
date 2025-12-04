@@ -18,8 +18,13 @@ export default defineConfig(async () => ({
       },
     }),
     vueDevTools(),
-    AutoImport({}),
-    Components({}),
+    AutoImport({
+      imports: ["vue", "vue-router","pinia"],
+    }),
+    Components({
+      extensions: ["vue","ts"],
+      dts: true,
+    }),
   ],
 
   // 这些 Vite 选项为 Tauri 开发定制，仅在 `tauri dev` 或 `tauri build` 时应用

@@ -24,10 +24,12 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@mdui/mcp": "^2.1.0",
     "@prettier/plugin-oxc": "^0.0.4",
     "@tauri-apps/cli": "^2",
     "@tsconfig/node22": "^22.0.2",
     "@types/node": "^22.18.11",
+    "@types/react": "^19.2.7",
     "@vitejs/plugin-vue": "^5.2.1",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.6.0",
